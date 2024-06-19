@@ -1,9 +1,12 @@
 package main
 
-import "github.com/dominikpalatynski/ContentCreator/server"
+import "github.com/dominikpalatynski/ContentCreator/content"
+
+// import "github.com/dominikpalatynski/ContentCreator/server"
 
 func main() {
-	server := server.NewAPIServer()
+	// server := server.NewAPIServer()
 
-	server.Run()
+	// server.Run()
+	content.GenerateContent("Example Prompt")
 }

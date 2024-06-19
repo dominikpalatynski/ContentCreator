@@ -1,6 +1,9 @@
 package server
 
 import (
+	"os"
+
+	"github.com/dominikpalatynski/ContentCreator/util"
 	"github.com/gin-gonic/gin"
 )
 
@@ -22,8 +25,9 @@ func (s *APIServer) Run() {
 
 	s.registerRoutes()
 
+	util.LoadEnv()
 
-	s.router.Run("6000")
+	s.router.Run(":"+ os.Getenv("PORT"))
 }
 
 func (s *APIServer) registerRoutes() {
